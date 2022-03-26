@@ -1,0 +1,2 @@
+minGap,accel,decel,emergencyDecel,tau,delta,density,sampledSeconds,waitingTime,occupancy,timeLoss,speed,entered,flow,collisions,fitness,iterations,type
+2.5,2.9,7.5,9,1,4,4.83,533.73,145.65,0.93,269.49,10.56,64.74,51.12,0,0.2,1,Combined
