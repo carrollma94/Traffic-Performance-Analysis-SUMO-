@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generated on 2021-06-03 14:30:34.441568 by $Id: ptlines2flows.py v1_3_1+0313-ccb31df3eb jakob.erdmann@dlr.de 2019-09-02 13:26:32 +0200 $ v1_9_1+0000-7ec6471b6c
+  options: 
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="pt_bus" vClass="bus"/>
+    <vType id="pt_tram" vClass="tram"/>
+    <vType id="pt_train" vClass="rail"/>
+    <vType id="pt_subway" vClass="rail_urban"/>
+    <vType id="pt_light_rail" vClass="rail_urban"/>
+    <vType id="pt_monorail" vClass="rail"/>
+    <vType id="pt_trolleybus" vClass="bus"/>
+    <vType id="pt_aerialway" vClass="bus"/>
+    <vType id="pt_ferry" vClass="ship"/>
+    <trip id="0_bus_301_Gold:0" type="pt_bus" depart="15" departLane="best" from="906700217" to="906700217">
+        <stop busStop="8406891927" duration="30"/>
+        <stop busStop="8420611597" duration="30"/>
+        <stop busStop="-2591075035" duration="30"/>
+        <stop busStop="-8419038653" duration="30"/>
+    </trip>
+    <trip id="1_bus_Gold:0" type="pt_bus" depart="133" departLane="best" from="906700217" to="906700217">
+        <stop busStop="8406891927" duration="30"/>
+        <stop busStop="8420611597" duration="30"/>
+        <stop busStop="-2591075035" duration="30"/>
+        <stop busStop="-8419038653" duration="30"/>
+        <stop busStop="-7725576826" duration="30"/>
+    </trip>
+    <trip id="2_bus_610_Minges_Park_and_Ride:0" type="pt_bus" depart="165" departLane="best" from="906839018#1" to="906839018#1">
+        <stop busStop="8419504676" duration="30"/>
+        <stop busStop="-8420611595" duration="30"/>
+        <stop busStop="-8420611596" duration="30"/>
+        <stop busStop="8420709998" duration="30"/>
+    </trip>
+    <trip id="3_bus_305_Uptown:0" type="pt_bus" depart="383" departLane="best" from="16722302#1" to="16722302#1">
+        <stop busStop="8420750216" duration="30"/>
+        <stop busStop="8420750215" duration="30"/>
+        <stop busStop="8420750213" duration="30"/>
+        <stop busStop="8420750211" duration="30"/>
+        <stop busStop="8420750210" duration="30"/>
+        <stop busStop="8420750209" duration="30"/>
+    </trip>
+    <trip id="4_bus_302_Health_Sciences:0" type="pt_bus" depart="406" departLane="best" from="474072165#0" to="906858877#0">
+        <stop busStop="8406891927" duration="30"/>
+    </trip>
+    <trip id="5_bus_304_Campus_Circulator:0" type="pt_bus" depart="441" departLane="best" from="575389180#1" to="171488544#3">
+        <stop busStop="8406891927" duration="30"/>
+        <stop busStop="8420611597" duration="30"/>
+        <stop busStop="3927930175" duration="30"/>
+        <stop busStop="-3928016652" duration="30"/>
+        <stop busStop="-8420750212" duration="30"/>
+        <stop busStop="-8420750214" duration="30"/>
+        <stop busStop="8420750216" duration="30"/>
+        <stop busStop="8420835949" duration="30"/>
+        <stop busStop="8419504676" duration="30"/>
+    </trip>
+</routes>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2021-06-10 17:23:05 by Eclipse SUMO netedit Version 1.9.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="C:\Users\Matt\Sumo\Gville%20Test1\osm.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="C:\Users\Matt\Sumo\Gville%20Test1\osm.net.xml"/>
+        <output.street-names value="true"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.5"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="C:\Users\Matt\Sumo\Gville%20Test1\test.rou.xml"/>
+        <data-files value="C:\Users\Matt\Sumo\Gville%20Test1\turns.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<meandata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/meandata_file.xsd">
+    <interval id="turns" begin="0.00" end="3600.00">
+        <edgeRelation from="-314153597#1" to="-321760061#0" count="500"/>
+        <edgeRelation from="-314153597#1" to="-314153602#2" count="500"/>
+    </interval>
+</meandata>

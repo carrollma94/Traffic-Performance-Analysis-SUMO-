@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2021-06-03 14:30:34 by Eclipse SUMO netconvert Version 1.9.1
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <type-files value="C:\Program%20Files%20(x86)\Eclipse\Sumo\data\typemap\osmNetconvert.typ.xml"/>
+        <osm-files value="osm_bbox.osm.xml"/>
+    </input>
+
+    <output>
+        <output-file value="osm.net.xml"/>
+        <output.street-names value="true"/>
+        <output.original-names value="true"/>
+        <ptstop-output value="osm_stops.add.xml"/>
+        <ptline-output value="osm_ptlines.xml"/>
+    </output>
+
+    <projection>
+        <proj.utm value="true"/>
+    </projection>
+
+    <processing>
+        <geometry.remove value="true"/>
+        <roundabouts.guess value="true"/>
+    </processing>
+
+    <tls_building>
+        <tls.discard-simple value="true"/>
+        <tls.join value="true"/>
+        <tls.guess-signals value="true"/>
+        <tls.default-type value="actuated"/>
+    </tls_building>
+
+    <ramp_guessing>
+        <ramps.guess value="true"/>
+    </ramp_guessing>
+
+    <junctions>
+        <junctions.join value="true"/>
+        <junctions.corner-detail value="5"/>
+    </junctions>
+
+    <railway>
+        <railway.topology.repair value="true"/>
+        <railway.topology.repair.stop-turn value="true"/>
+    </railway>
+
+    <report>
+        <verbose value="true"/>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <busStop id="-2591075035" name="College Hill Drive &amp; 10th Street" lane="-171488544#0_0" startPos="8.27" endPos="23.27" friendlyPos="true" lines="301 Gold Gold"/>
+    <busStop id="-3928016652" name="5th and Reade Inbound" lane="-911258378#5_0" startPos="12.75" endPos="27.75" friendlyPos="true" lines="304 Campus Circulator"/>
+    <busStop id="-7725576826" name="The Bower" lane="-906700206#2_0" startPos="28.88" endPos="43.88" friendlyPos="true" lines="Gold"/>
+    <busStop id="-8419038653" name="College Hill West" lane="-906700197#0_0" startPos="0.00" endPos="7.94" friendlyPos="true" lines="301 Gold Gold"/>
+    <busStop id="-8420611595" name="Charles Boulevard and Ficklen Drive" lane="-16722369#12_0" startPos="28.12" endPos="43.12" friendlyPos="true" lines="610 Minges Park and Ride"/>
+    <busStop id="-8420611596" name="Ficklen Drive" lane="-16722369#0_0" startPos="0.00" endPos="8.15" friendlyPos="true" lines="610 Minges Park and Ride"/>
+    <busStop id="-8420750212" name="Career Center Inbound" lane="-911258378#0_0" startPos="30.61" endPos="45.61" friendlyPos="true" lines="304 Campus Circulator"/>
+    <busStop id="-8420750214" name="5th Street and Founders Inbound" lane="-361221974#6_0" startPos="0.00" endPos="9.84" friendlyPos="true" lines="304 Campus Circulator"/>
+    <busStop id="2589911347" lane="252995537#1_0" startPos="30.38" endPos="32.44" friendlyPos="true"/>
+    <busStop id="3927930175" name="Reade and Chico&apos;s" lane="51724100#1_0" startPos="4.49" endPos="12.46" friendlyPos="true" lines="304 Campus Circulator"/>
+    <busStop id="7031689347" lane="906700217_0" startPos="47.09" endPos="62.09" friendlyPos="true"/>
+    <busStop id="8406891927" name="Main Campus Student Center" lane="906700217_0" startPos="47.09" endPos="62.09" friendlyPos="true" lines="301 Gold Gold 302 Health Sciences 304 Campus Circulator"/>
+    <busStop id="8419504667" lane="906700197#1_0" startPos="0.00" endPos="11.07" friendlyPos="true"/>
+    <busStop id="8419504668" lane="906700200#10_0" startPos="25.12" endPos="38.18" friendlyPos="true"/>
+    <busStop id="8419504670" lane="51724102#0_0" startPos="0.00" endPos="7.50" friendlyPos="true"/>
+    <busStop id="8419504671" lane="906700209#2_0" startPos="20.29" endPos="28.22" friendlyPos="true"/>
+    <busStop id="8419504672" lane="906862822_0" startPos="4.02" endPos="19.02" friendlyPos="true"/>
+    <busStop id="8419504673" lane="253130293_0" startPos="50.55" endPos="65.55" friendlyPos="true"/>
+    <busStop id="8419504676" name="Christenbury Gym Bus Terminal" lane="906839018#1_0" startPos="115.43" endPos="123.24" friendlyPos="true" lines="610 Minges Park and Ride 304 Campus Circulator"/>
+    <busStop id="8420611597" name="Mendenhall / West End Bus Terminal" lane="252995537#1_0" startPos="30.38" endPos="32.44" friendlyPos="true" lines="301 Gold Gold 304 Campus Circulator"/>
+    <busStop id="8420709998" name="Berkley and 14th" lane="906700199#2_0" startPos="17.81" endPos="32.81" friendlyPos="true" lines="610 Minges Park and Ride"/>
+    <busStop id="8420750209" name="HR Building" lane="16724159#0_0" startPos="11.26" endPos="26.26" friendlyPos="true" lines="305 Uptown"/>
+    <busStop id="8420750210" name="Reade and 4th" lane="16723263_0" startPos="64.13" endPos="79.13" friendlyPos="true" lines="305 Uptown"/>
+    <busStop id="8420750211" name="5th and Reade Outbound" lane="905646840#0_0" startPos="0.00" endPos="14.24" friendlyPos="true" lines="305 Uptown"/>
+    <busStop id="8420750213" name="Career Center Outbound" lane="361221974#9_0" startPos="60.00" endPos="75.00" friendlyPos="true" lines="305 Uptown"/>
+    <busStop id="8420750215" name="5th Street and Founders Outbound" lane="361221974#5_0" startPos="19.14" endPos="34.14" friendlyPos="true" lines="305 Uptown"/>
+    <busStop id="8420750216" name="Speight" lane="16722302#1_0" startPos="60.94" endPos="56.11" friendlyPos="true" lines="305 Uptown 304 Campus Circulator"/>
+    <busStop id="8420835949" name="College Hill B Lot" lane="253129289#1_0" startPos="10.93" endPos="22.94" friendlyPos="true" lines="304 Campus Circulator"/>
+</additional>

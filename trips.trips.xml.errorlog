@@ -1,0 +1,14 @@
+Warning: At actuated tlLogic 'cluster_172902317_3044981450_3927781864_7111689247_8417031010_8417031011', linkIndex 0 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_172902317_3044981450_3927781864_7111689247_8417031010_8417031011', linkIndex 1 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_172902317_3044981450_3927781864_7111689247_8417031010_8417031011', linkIndex 2 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_172902317_3044981450_3927781864_7111689247_8417031010_8417031011', linkIndex 3 has no controlling detector.
+Warning: At actuated tlLogic 'cluster_172902317_3044981450_3927781864_7111689247_8417031010_8417031011', linkIndex 4 has no controlling detector.
+Warning: At actuated tlLogic 'joinedS_0', linkIndex 16 has no controlling detector.
+Warning: At actuated tlLogic 'joinedS_0', linkIndex 23 has no controlling detector.
+Warning: busStop '8420611597' on lane '252995537#1_0' is too short for vehicle '0_bus_301_Gold:0'.
+Warning: busStop '8420750216' on lane '16722302#1_0' is too short for vehicle '3_bus_305_Uptown:0'.
+Warning: busStop '3927930175' on lane '51724100#1_0' is too short for vehicle '5_bus_304_Campus_Circulator:0'.
+Warning: No connection between edge '253129289#1' and edge '906839018#1' found.
+Warning: Vehicle '5_bus_304_Campus_Circulator:0' has no valid route from edge '253129289#1' to stop edge '906839018#1'.
+Warning: Teleporting vehicle '5_bus_304_Campus_Circulator:0'; waited too long (wrong lane), lane='253129289#1_0', time=1528.00.
+Warning: Vehicle '5_bus_304_Campus_Circulator:0' ends teleporting on edge '906839018#1', time 1528.00.
