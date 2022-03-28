@@ -206,9 +206,9 @@ def test():
     #     dataPoints = 11,
     #     ignoreZeros = False)
 
-    '''
-    ratios = [0.75,1.0]
-    scales = ["0.5","2.0"]
+
+    ratios = [0.25,0.50,0.75,1.0]
+    scales = ["0.5","1.0","2.0"]
     for ratio in ratios:
         for scale in scales:
             outputFolderName = "Penetration Rate Analysis FINAL\\ratio" + str(ratio) + "\\scale_" + scale
@@ -226,7 +226,7 @@ def test():
                  ignoreZeros = True,\
                  idmRatio=ratio)
             del(analysis)
-    '''
+
     #print("Density:", density)    #print("Flow:", flow)
     #print("Entered:", entered)
     #print("Sampled Seconds:", sampledSeconds)

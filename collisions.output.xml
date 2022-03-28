@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022-03-22 23:23:42 by Eclipse SUMO sumo Version 1.10.0
+<!-- generated on 2022-03-26 20:51:06 by Eclipse SUMO sumo Version 1.10.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="C:\Users\Matt\Sumo\Gville%20Test1\osm.net.xml"/>
-        <route-files value="C:\Users\Matt\Sumo\Gville%20Test1\osm_pt.rou.xml,C:\Users\Matt\Sumo\Gville%20Test1\routes.rou.xml"/>
-        <additional-files value="C:\Users\Matt\Sumo\Gville%20Test1\additional.xml"/>
+        <net-file value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\osm.net.xml"/>
+        <route-files value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\osm_pt.rou.xml,C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\routes.rou.xml"/>
+        <additional-files value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\additional.xml"/>
     </input>
 
     <output>
-        <collision-output value="C:\Users\Matt\Sumo\Gville%20Test1\collisions.output.xml"/>
+        <collision-output value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\collisions.output.xml"/>
     </output>
 
     <time>
@@ -20,7 +20,7 @@
 
     <processing>
         <ignore-route-errors value="true"/>
-        <scale value="1"/>
+        <scale value="2"/>
     </processing>
 
     <routing>
@@ -38,12 +38,8 @@
     </report>
 
     <gui_only>
-        <gui-settings-file value="C:\Users\Matt\Sumo\Gville%20Test1\osm.view.xml"/>
+        <gui-settings-file value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\osm.view.xml"/>
         <start value="true"/>
     </gui_only>
 
 </configuration>
--->
-
-<collisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/collision_file.xsd">
-</collisions>
