@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022-03-26 20:51:06 by Eclipse SUMO sumo Version 1.10.0
+<!-- generated on 2022-03-28 13:25:39 by Eclipse SUMO sumo Version 1.10.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -16,11 +16,12 @@
     <time>
         <begin value="0"/>
         <end value="-1"/>
+        <step-length value="1"/>
     </time>
 
     <processing>
         <ignore-route-errors value="true"/>
-        <scale value="2"/>
+        <scale value="1"/>
     </processing>
 
     <routing>
@@ -40,6 +41,7 @@
     <gui_only>
         <gui-settings-file value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\osm.view.xml"/>
         <start value="true"/>
+        <tracker-interval value="1"/>
     </gui_only>
 
 </configuration>

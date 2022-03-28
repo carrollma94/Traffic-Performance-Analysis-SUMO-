@@ -207,8 +207,8 @@ def test():
     #     ignoreZeros = False)
 
 
-    ratios = [0.25,0.50,0.75,1.0]
-    scales = ["0.5","1.0","2.0"]
+    ratios = [1.0]
+    scales = ["1.0"]
     for ratio in ratios:
         for scale in scales:
             outputFolderName = "Penetration Rate Analysis FINAL\\ratio" + str(ratio) + "\\scale_" + scale

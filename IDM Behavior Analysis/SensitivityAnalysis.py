@@ -22,6 +22,7 @@ class SensAnalys():
                outFileName="main.output.xml", \
                addFileName="additional.xml", \
                collFileName=None, \
+               plot = False, \
                scale = "1", \
                dataPoints = 10,
                ignoreZeros = False,
@@ -59,6 +60,7 @@ class SensAnalys():
         self.outFileName = outFileName
         self.addFileName = addFileName
         self.collFileName = collFileName
+        self.plot = plot
         self.scale = scale
         self.dataPoints = dataPoints
 
@@ -79,7 +81,9 @@ class SensAnalys():
         print(self.outputDict)
         # Call myPlot class to save plots in output folder
         ###################################################################################
-        self.plots = createPlots(self.outputDict, self.outFolderName, self.defParams, self.idmRatio)
+
+
+        self.plots = createPlots(self.outputDict, self.outFolderName, self.defParams, self.idmRatio, self.plot)
         del(self.plots)
     # Run SUMO with default parameters
     ################################################################################################

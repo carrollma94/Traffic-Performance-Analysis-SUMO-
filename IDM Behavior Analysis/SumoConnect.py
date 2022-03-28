@@ -43,7 +43,8 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
                                      "--begin", begin, \
                                      "--end", end, \
                                      "--scale", scale, \
-                                     "--no-warnings", noWarnings], \
+                                     "--no-warnings", noWarnings,\
+                                     "--step-length", "1"], \
                                      stdout=subprocess.PIPE)
     elif collFileName == None:
         SUMO_run = subprocess.Popen(["sumo.exe", "-c", location, \
@@ -51,7 +52,8 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
                                      "--scale", scale, \
                                      "--begin", begin, \
                                      "--end", end, \
-                                     "--no-warnings", noWarnings], \
+                                     "--no-warnings", noWarnings,\
+                                     "--step-length", "1"], \
                                      stdout=subprocess.PIPE)
     elif addFileName == None:
         SUMO_run = subprocess.Popen(["sumo.exe", "-c", location, \
@@ -59,7 +61,8 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
                                      "--scale", scale, \
                                      "--begin", begin, \
                                      "--end", end, \
-                                     "--no-warnings", noWarnings], \
+                                     "--no-warnings", noWarnings, \
+                                     "--step-length", "1"], \
                                      stdout=subprocess.PIPE)
     SUMO_run.wait()
     return

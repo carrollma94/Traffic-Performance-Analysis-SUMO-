@@ -9,8 +9,9 @@ import os
 import shutil
 
 class createPlots():
-    def __init__(self, data, outFolderName, defParams, idmRatio):
+    def __init__(self, data, outFolderName, defParams, idmRatio, plot = True):
         self.idmRatio = idmRatio
+        self.plot = plot
         self.data = data
         self.defParams = defParams
         self.yMax = {}
@@ -31,10 +32,12 @@ class createPlots():
         self.checkDir(self.location)
 
         # Plot single and combined sensitivity analysis. Save plots in outFolderName
-        self.plots = self.plotSingle()
-        self.plots = self.plotCombined()
 
-        #self.Plot3D()
+        if self.plot == True:
+            self.plots = self.plotSingle()
+            self.plots = self.plotCombined()
+
+            #self.Plot3D()
 
         del (self.plots)
 
