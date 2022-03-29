@@ -161,7 +161,7 @@ def optomizeAllParameters(perfMeasure, csvFileName, simLoc, rouFileName, cfgFile
                   paramLimits["tau"], paramLimits["delta"]])
 
     # Set GA parameters
-    algorithm_param = {'max_num_iteration': 1000, \
+    algorithm_param = {'max_num_iteration': 500, \
                        'population_size': 10, \
                        'mutation_probability': 0.5, \
                        'elit_ratio': .1, \

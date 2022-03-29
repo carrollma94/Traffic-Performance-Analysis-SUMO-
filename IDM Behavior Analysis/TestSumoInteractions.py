@@ -279,7 +279,7 @@ def test():
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
     '''
-
+    '''
     path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/combined'
     fileName = 'combined.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
@@ -293,11 +293,13 @@ def test():
                           begin='0', end='-1', scale='1', noWarnings="true", \
                           stat_data = stat_data)
     
-    path = 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm'
     fileName = 'All_except_combined.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params)
     print(stat_data)
+    '''
+    plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName='GA-CART limits tau and accel 1.0IDM', perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
 
 
     return
