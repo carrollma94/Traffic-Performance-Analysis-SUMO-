@@ -1,5 +1,5 @@
 <routes>
-    <vType id="idm_vehicle" vClass="passenger" carFollowModel="IDM" minGap="2.16" accel="4.81" decel="6.32" emergencyDecel="9.0" tau="1.62" delta="3.25" />
+    <vType id="idm_vehicle" vClass="passenger" carFollowModel="IDM" minGap="2.51" accel="5.24" decel="9.43" emergencyDecel="9.0" tau="0.86" delta="5.91" />
     <vType id="krauss_vehicle" vClass="passenger" carFollowModel="Krauss" />
     <vehicle id="veh0" type="idm_vehicle" depart="0.00" departLane="best">
         <route edges="16728645#5 -16724850#3 -16724850#2 -16724850#1 -16724850#0 904622813#0 904622813#1 904622813#2 16723820 906939360 911248048 253132779 218132216 906939359 361221996 -575389179 16729391 -575389180#3 -575389180#2 -575389180#1 253130291#1 253130291#2 253130291#6 -16721699#4 -16721885#2 -16721885#1" />
