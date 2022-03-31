@@ -65,7 +65,7 @@ def test():
     # Alter Minimum and maximum limits for tau and accel CF parameters using decision tree constraints 100% IDM
     ###############################################################################
     # Maximum acceleration of car (m/s^2)
-    paramLimits["accel"] = np.array([4.585, 4.585*maxMultiplier])
+    paramLimits["accel"] = np.array([4.585, defParams["accel"]*maxMultiplier])
     # The driver's desired (minimum) time headway
     paramLimits["tau"] = np.array([0.775, defParams["tau"]*maxMultiplier])
 
@@ -279,7 +279,7 @@ def test():
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
     '''
-    '''
+
     path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/combined'
     fileName = 'combined.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
@@ -298,7 +298,7 @@ def test():
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params)
     print(stat_data)
-    '''
+
     plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName='GA-CART limits tau and accel 1.0IDM', perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
 
 
