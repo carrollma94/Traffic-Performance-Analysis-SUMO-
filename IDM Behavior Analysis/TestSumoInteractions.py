@@ -75,81 +75,45 @@ def test():
     X = np.array([defParams["minGap"], defParams["accel"], defParams["decel"],\
                 defParams["emergencyDecel"], defParams["tau"], defParams["delta"]])
 
-    '''
-    idm_behavior_analysis(defParams, "Default IDM Behavior", [0,100])
-    # Set values for IDM developed from Combined GA Fitness
-    ###############################################################################
-    idm_params = {}
-    # Minimum gap between following and lead car (meters)
-    idm_params["minGap"] = 4.05
-    # Maximum acceleration of car (m/s^2)
-    idm_params["accel"] = 5.58
-    # Maximum deceleration of car (m/s^2)
-    idm_params["decel"] = 4.67
-    # Emergency deceleration of car (m/s^2)
-    idm_params["emergencyDecel"] = 9
-    # The driver's desired (minimum) time headway
-    idm_params["tau"] = 0.93
-    # acceleration exponent
-    idm_params["delta"] = 5.84
-    idm_behavior_analysis(idm_params, "Combined GA Solution IDM Behavior", [0, 100])
-    '''
+
     '''
     # Test that random data can be created
     RandomSimulations(limits=paramLimits, iterations=1000, simLoc=simLoc, cfgFileName=cfgFileName, rouFileName=rouFileName,
                  outFileName=outFileName,collFileName=collFileName, addFileName=addFileName, ratios=[1], scales=[1])
     '''
-    '''
-    # Test sensitivity analysis
-    outputFolderName = "Sensitivity Analysis Test"
-    SensAnalys(paramLimits, defParams=defParams, \
-               outParamList=["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered",
-                             "flow", "collisions"], \
-               outFolderName=outputFolderName, \
-               simLoc=simLoc, \
-               cfgFileName=cfgFileName, \
-               rouFileName=rouFileName, \
-               outFileName=outFileName, \
-               addFileName=addFileName, \
-               collFileName=collFileName, \
-               scale='1', \
-               dataPoints=10, \
-               ignoreZeros=True, \
-               idmRatio=1)
-    '''
+
     '''
     # Change all data to 2 decimal places in the csv files within a specified file location
-    twoDecimalPlaces('C:\\Users\\Matt\\Sumo\\Gville Test1\\Traffic Analysis\\GeneticAlgorithm')
+    twoDecimalPlaces(simLoc + '/IDM Behavior Analysis/GeneticAlgorithm')
     '''
     '''
-    # Generate combnined fitness for default parameter simulation
-    idmRatio = np.array([defParams["minGap"], defParams["accel"], defParams["decel"], defParams["emergencyDecel"], \
+    # Example of how to Generate combined fitness for default parameter simulation
+    idmParams = np.array([defParams["minGap"], defParams["accel"], defParams["decel"], defParams["emergencyDecel"], \
                   defParams["tau"], defParams["delta"]])
 
-    setVtype(simLoc, rouFileName, idmRatio, idmRatio=1)
+    setVtype(simLoc, rouFileName, idmParams, idmRatio=1)
     runSUMO(simLoc, cfgFileName, collFileName, addFileName, begin='0', end='-1', scale='1', noWarnings="true")
     data = outputData(simLoc, outFileName, ignoreZeros=True, collFileName=collFileName)
-    print(data.mean)
 
-    path = 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/density'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/density'
     fileName = 'density_500.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params)
     print(stat_data)
 
-    path = 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/flow'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/flow'
     fileName = 'flow_500.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
 
-    path = 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/speed'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/speed'
     fileName = 'speed_1000.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
 
-    path = 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/waitingTime'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/waitingTime'
     fileName = 'waitingTime.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params, stat_data)
@@ -172,7 +136,7 @@ def test():
 
 
     '''
-    Plotting the density and flow correlations for different penetration rates
+    # Example of Plotting the density and flow correlations based on edges of a network for different penetration rates
     density = {}
     flow = {}
     for penRate in [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
@@ -185,34 +149,13 @@ def test():
         density[penRate] = outData.paramList["density"]
         flow[penRate] = outData.paramList["flow"]
 
-
-    myDir = simLoc + "\\Traffic Analysis\\Distributions\\NetworkPenetration_1.0_curve_to_fit"
+    myDir = simLoc + "\\IDM Behavioral Analysis\\Distributions\\NetworkPenetration_1.0_curve_to_fit"
 
     PenetrationRatesPlot(density, flow, myDir, cutoff=1)
     '''
-    #histogram(density, bins= 100, xLabel="Density veh/km", yLabel="", title="Density Distribution", \
-    #          xMin=0.01, xMax=100, Name="Density Distribution")
-    #histogram(sampledSeconds, bins=100, xLabel="Sampled Seconds veh/s", yLabel="", title="Sampled Seconds Distribution", \
-    #          xMin=0, xMax=100, Name="Sampled Seconds Distribution")
-    #histogram(flow, bins=100, xLabel="Flow veh/hr", yLabel="", title="Flow Distribution", \
-    #          xMin=0, xMax=100, Name="Flow Distribution")
-
-    # Run sensitivty analysis
-    #########################################################################################
-    #SensitivityAnalysis = SensAnalys(paramLimits, defParams=defParams, \
-    #     outParamList =["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered", "flow"], \
-    #     outFolderName="output_8_18_21", \
-    #     simLoc=simLoc, \
-    #     cfgFileName=cfgFileName, \
-    #     rouFileName=rouFileName, \
-    #     outFileName=outFileName, \
-    #     addFileName=addFileName, \
-    #     collFileName=collFileName, \
-    #     scale = "1", \
-    #     dataPoints = 11,
-    #     ignoreZeros = False)
 
     '''
+    # Example of how to run Sensitivity Analysis for multiple ratios and scales
     ratios = [1.0]
     scales = ["1.0"]
     for ratio in ratios:
@@ -233,12 +176,9 @@ def test():
                  idmRatio=ratio)
             del(analysis)
     '''
-    #print("Density:", density)    #print("Flow:", flow)
-    #print("Entered:", entered)
-    #print("Sampled Seconds:", sampledSeconds)
-    #print("Mean:", outData.mean)
-    #print("Maximum:", outData.maximum)
+
     '''
+    # Example of running sensitivity analysis
     SensitivityAnalysis = SensAnalys(paramLimits, defParams=defParams, \
          outParamList =["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered", "flow", "collisions"], \
          outFolderName="Density-Speed-Flow Analysis with Collisions_100", \
@@ -255,52 +195,76 @@ def test():
     
     '''
     '''
-    path = 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/density'
+    # Examples of how to create statistical data from a GA output files
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/density'
     fileName = 'density_500.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params)
     print(stat_data)
 
-    path = simLoc + 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/flow'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/flow'
     fileName = 'flow_500.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
 
-    path = simLoc + 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/speed'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/speed'
     fileName = 'speed_1000.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
 
-    path = simLoc + 'C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm/waitingTime'
+    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/waitingTime'
     fileName = 'waitingTime.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params, stat_data)
     print(stat_data)
     '''
 
+    '''
+    # Example of how to plot the IDM behavior model to show acceleration based on velocity inputs
+    # NOTE:UNFINISHED, Results have not be validated
+    idm_behavior_analysis(defParams, "Default IDM Behavior", [0,100])
+    # Set values for IDM developed from Combined GA Fitness
+    ###############################################################################
+    idm_params = {}
+    # Minimum gap between following and lead car (meters)
+    idm_params["minGap"] = 4.05
+    # Maximum acceleration of car (m/s^2)
+    idm_params["accel"] = 5.58
+    # Maximum deceleration of car (m/s^2)
+    idm_params["decel"] = 4.67
+    # Emergency deceleration of car (m/s^2)
+    idm_params["emergencyDecel"] = 9
+    # The driver's desired (minimum) time headway
+    idm_params["tau"] = 0.93
+    # acceleration exponent
+    idm_params["delta"] = 5.84
+    idm_behavior_analysis(idm_params, "Combined GA Solution IDM Behavior", [0, 100])
+    '''
+
+    '''
+    # Example of how to run GA for combined model
+    
+    # Generate Stat Data from data set (ours was from a previously ran GA for combined fitness function)
     path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm/combined'
     fileName = 'combined.csv'
     params = ['waitingTime', 'speed', 'flow', 'density']
     stat_data = GenerateStats(path, fileName, params)
     print(stat_data)
-
-    optomizeAllParameters(perfMeasure=['waitingTime', 'speed', 'flow', 'density'], csvFileName='GA-CART limits tau and accel 1.0IDM.csv', simLoc=simLoc, \
+    
+    # Run GA
+    csvFileName = 'GA-CART limits tau and accel 1.0IDM'
+    optomizeAllParameters(perfMeasure=['waitingTime', 'speed', 'flow', 'density'], csvFileName=csvFileName, \
                           rouFileName=rouFileName, cfgFileName=cfgFileName, \
                           paramLimits=paramLimits, defParams=defParams, \
                           idmRatio=1, collFileName=collFileName, addFileName=addFileName, \
                           begin='0', end='-1', scale='1', noWarnings="true", \
                           stat_data = stat_data)
     
-    path = simLoc + '/IDM Behavior Analysis/GeneticAlgorithm'
-    fileName = 'All_except_combined.csv'
-    params = ['waitingTime', 'speed', 'flow', 'density']
-    stat_data = GenerateStats(path, fileName, params)
-    print(stat_data)
-
-    plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName='GA-CART limits tau and accel 1.0IDM', perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
-
+    # Plot the GA elites from CSV file that was created
+    plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName=csvFileName, perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
+    '''
 
     return
 

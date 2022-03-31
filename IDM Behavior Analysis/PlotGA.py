@@ -142,7 +142,6 @@ def GenerateStats(path, fileName, params, stat_data = {}):
                 stat_data[param][3] = paramSTD
     return stat_data
 
-
 '''
 plotFromCSV('C:/Users/Matt/Sumo/Gville Test1/Traffic Analysis/GeneticAlgorithm',\
     'flow_500', "flow", True)
