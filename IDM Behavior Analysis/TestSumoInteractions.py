@@ -156,7 +156,7 @@ def test():
 
 
     # Example of how to run Sensitivity Analysis for multiple ratios and scales
-    ratios = [0.25,0.50,0.75]
+    ratios = [0.10]
     scales = ["1.0"]
     for ratio in ratios:
         for scale in scales:
