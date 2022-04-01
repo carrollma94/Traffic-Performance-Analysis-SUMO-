@@ -29,7 +29,7 @@ class createPlots():
                       "delta": "(accel sensitivity)", "stepping": "(s)", "collisions": ""}
 
         self.clearOutFolder()
-        self.checkDir(self.location)
+        self.checkDir(self.location + "\\" + self.outFolderName)
 
         # Plot single and combined sensitivity analysis. Save plots in outFolderName
 

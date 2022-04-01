@@ -22,7 +22,8 @@ class SensAnalys():
                outFileName="main.output.xml", \
                addFileName="additional.xml", \
                collFileName=None, \
-               plot = False, \
+               plo
+        t = False, \
                scale = "1", \
                dataPoints = 10,
                ignoreZeros = False,

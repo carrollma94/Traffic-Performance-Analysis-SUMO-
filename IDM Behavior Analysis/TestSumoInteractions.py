@@ -61,14 +61,14 @@ def test():
     paramLimits["tau"] = np.array([defParams["tau"]*minMultiplier, defParams["tau"]*maxMultiplier])
     # acceleration exponent
     paramLimits["delta"] = np.array([defParams["delta"]*minMultiplier, defParams["delta"]*maxMultiplier])
-
+    '''
     # Alter Minimum and maximum limits for tau and accel CF parameters using decision tree constraints 100% IDM
     ###############################################################################
     # Maximum acceleration of car (m/s^2)
     paramLimits["accel"] = np.array([4.585, defParams["accel"]*maxMultiplier])
     # The driver's desired (minimum) time headway
     paramLimits["tau"] = np.array([0.775, defParams["tau"]*maxMultiplier])
-
+    '''
     # Organize input data to run Sensitivity Analysis and Genetic Algorithm
     #################################################################################
     # Create X matrix to combine input parameter limits
@@ -154,13 +154,13 @@ def test():
     PenetrationRatesPlot(density, flow, myDir, cutoff=1)
     '''
 
-    '''
+
     # Example of how to run Sensitivity Analysis for multiple ratios and scales
-    ratios = [1.0]
+    ratios = [0.25,0.50,0.75]
     scales = ["1.0"]
     for ratio in ratios:
         for scale in scales:
-            outputFolderName = "Penetration Rate Analysis FINAL\\ratio" + str(ratio) + "\\scale_" + scale
+            outputFolderName = "Penetration Rate Analysis\\ratio" + str(ratio) + "\\scale_" + scale
             analysis = SensAnalys(paramLimits, defParams=defParams, \
                  outParamList =["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered", "flow", "collisions"], \
                  outFolderName=outputFolderName, \
@@ -175,7 +175,8 @@ def test():
                  ignoreZeros = True,\
                  idmRatio=ratio)
             del(analysis)
-    '''
+
+
 
     '''
     # Example of running sensitivity analysis
@@ -254,14 +255,15 @@ def test():
     print(stat_data)
     
     # Run GA
-    csvFileName = 'GA-CART limits tau and accel 1.0IDM'
-    optomizeAllParameters(perfMeasure=['waitingTime', 'speed', 'flow', 'density'], csvFileName=csvFileName, \
+    csvFileName = 'GA-1.0IDM.csv'
+    optomizeAllParameters(perfMeasure=params, simLoc=simLoc, csvFileName=csvFileName, \
                           rouFileName=rouFileName, cfgFileName=cfgFileName, \
                           paramLimits=paramLimits, defParams=defParams, \
                           idmRatio=1, collFileName=collFileName, addFileName=addFileName, \
                           begin='0', end='-1', scale='1', noWarnings="true", \
                           stat_data = stat_data)
     
+    fileName = 'GA-1.0IDM'
     # Plot the GA elites from CSV file that was created
     plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName=csvFileName, perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
     '''
