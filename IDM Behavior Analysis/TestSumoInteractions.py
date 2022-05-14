@@ -33,9 +33,9 @@ def test():
     # Minimum gap between following and lead car (meters)
     defParams["minGap"] = 2.5
     # Maximum acceleration of car (m/s^2)
-    defParams["accel"] = 2.9
+    defParams["accel"] = 2.6
     # Maximum deceleration of car (m/s^2)
-    defParams["decel"] = 7.5
+    defParams["decel"] = 4.5
     # Emergency deceleration of car (m/s^2)
     defParams["emergencyDecel"] = 9
     # The driver's desired (minimum) time headway
@@ -75,6 +75,23 @@ def test():
     X = np.array([defParams["minGap"], defParams["accel"], defParams["decel"],\
                 defParams["emergencyDecel"], defParams["tau"], defParams["delta"]])
 
+    #
+    # create csv of mean density and flow for edge in a simulation
+    #
+    setVtype(simLoc, rouFileName, idmParams=X, idmRatio=0.0)
+    runSUMO(simLoc, cfgFileName, collFileName=collFileName, addFileName=addFileName, begin='0', end='-1', scale='1', noWarnings="true")
+    data = outputData(simLoc, outFileName, ignoreZeros=False, cutoff=0.5,\
+        paramList = ["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered", "flow", "collisions"],\
+        collFileName=None)
+    #print(data.data)
+    df = pd.DataFrame(columns=["edge", "flow", "density"], index=None)
+    for interval in data.data:
+        for edge in data.data[interval]:
+                flow = data.data[interval][edge]['flow']
+                density = data.data[interval][edge]['density']
+                df = df.append({"edge": edge, "flow": flow, "density": density}, ignore_index=True)
+    print(df)
+    df.to_csv(simLoc + "/edge_data_IDM0.0.csv")
 
     '''
     # Test that random data can be created
@@ -154,9 +171,9 @@ def test():
     PenetrationRatesPlot(density, flow, myDir, cutoff=1)
     '''
 
-
+    '''
     # Example of how to run Sensitivity Analysis for multiple ratios and scales
-    ratios = [0.10]
+    ratios = [1]
     scales = ["1.0"]
     for ratio in ratios:
         for scale in scales:
@@ -175,6 +192,7 @@ def test():
                  ignoreZeros = True,\
                  idmRatio=ratio)
             del(analysis)
+    '''
 
 
 

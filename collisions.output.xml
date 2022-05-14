@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022-04-03 17:01:59 by Eclipse SUMO sumo Version 1.10.0
+<!-- generated on 2022-05-02 20:54:22 by Eclipse SUMO sumo Version 1.10.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -40,7 +40,7 @@
 
     <gui_only>
         <gui-settings-file value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-\osm.view.xml"/>
-        <start value="true"/>
+        <start value="false"/>
         <tracker-interval value="1"/>
     </gui_only>
 

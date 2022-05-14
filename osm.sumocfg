@@ -13,7 +13,7 @@
 
     <processing>
         <ignore-route-errors value="true"/>
-        <scale value="3"/>
+        <scale value="1"/>
     </processing>
 
     <routing>
@@ -29,7 +29,7 @@
 
     <gui_only>
         <gui-settings-file value="osm.view.xml"/>
-        <start value="true"/>
+        <start value="false"/>
     </gui_only>
 
     <report>
