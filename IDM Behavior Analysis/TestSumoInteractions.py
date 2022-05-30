@@ -74,7 +74,7 @@ def test():
     # Create X matrix to combine input parameter limits
     X = np.array([defParams["minGap"], defParams["accel"], defParams["decel"],\
                 defParams["emergencyDecel"], defParams["tau"], defParams["delta"]])
-
+    '''
     #
     # create csv of mean density and flow for edge in a simulation
     #
@@ -92,9 +92,9 @@ def test():
                 df = df.append({"edge": edge, "flow": flow, "density": density}, ignore_index=True)
     print(df)
     df.to_csv(simLoc + "/edge_data_IDM0.0.csv")
-
     '''
-    # Test that random data can be created
+    '''
+    # create CSV of random data for alterations of car model parameters
     RandomSimulations(limits=paramLimits, iterations=1000, simLoc=simLoc, cfgFileName=cfgFileName, rouFileName=rouFileName,
                  outFileName=outFileName,collFileName=collFileName, addFileName=addFileName, ratios=[1], scales=[1])
     '''
@@ -262,7 +262,7 @@ def test():
     idm_behavior_analysis(idm_params, "Combined GA Solution IDM Behavior", [0, 100])
     '''
 
-    '''
+
     # Example of how to run GA for combined model
     
     # Generate Stat Data from data set (ours was from a previously ran GA for combined fitness function)
@@ -273,18 +273,19 @@ def test():
     print(stat_data)
     
     # Run GA
-    csvFileName = 'GA-1.0IDM.csv'
-    optomizeAllParameters(perfMeasure=params, simLoc=simLoc, csvFileName=csvFileName, \
-                          rouFileName=rouFileName, cfgFileName=cfgFileName, \
-                          paramLimits=paramLimits, defParams=defParams, \
-                          idmRatio=1, collFileName=collFileName, addFileName=addFileName, \
-                          begin='0', end='-1', scale='1', noWarnings="true", \
-                          stat_data = stat_data)
-    
-    fileName = 'GA-1.0IDM'
+    for idmRatio in [0.25,0.5,0.75,1.0]:
+        csvFileName = 'GA-EIDM-' + str(idmRatio) + '.csv'
+        optomizeAllParameters(perfMeasure=params, simLoc=simLoc, csvFileName=csvFileName, \
+                              rouFileName=rouFileName, cfgFileName=cfgFileName, \
+                              paramLimits=paramLimits, defParams=defParams, \
+                              idmRatio=idmRatio, collFileName=collFileName, addFileName=addFileName, \
+                              begin='0', end='-1', scale='1', noWarnings="true", \
+                              stat_data = stat_data)
+
+    #fileName = 'GA-1.0IDM'
     # Plot the GA elites from CSV file that was created
-    plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName=csvFileName, perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
-    '''
+    #plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName=csvFileName, perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
+
 
     return
 
