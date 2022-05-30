@@ -60,7 +60,7 @@ class RandomSimulations():
                     df.loc[len(df)] = row
 
                 #Save df as csv
-                df.to_csv(self.simLoc + "\\Traffic Analysis\\Random Data\\Random Data_scale-" + scale + "_ratio-" + \
+                df.to_csv(self.simLoc + "/Traffic Analysis/Random Data/Random Data_scale-" + scale + "_ratio-" + \
                           str(ratio) + "_iterations-" + str(self.iterations) + ".csv",
                           index=False)
 

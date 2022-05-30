@@ -16,12 +16,12 @@ def AddIterations(myCSV):
 def twoDecimalPlaces(folderLocation):
     for root, subdirectories, files in os.walk(folderLocation):
         for subdirectory in subdirectories:
-            twoDecimalPlaces(folderLocation + '\\' + subdirectory)
+            twoDecimalPlaces(folderLocation + '/' + subdirectory)
         for file in files:
             try:
                 if file.endswith('.csv'):
                     print(file)
-                    csv = folderLocation + "\\" + file
+                    csv = folderLocation + "/" + file
                     df = pd.read_csv(csv)
                     print(df)
                     df = np.round(df, decimals=2)
@@ -33,9 +33,9 @@ def twoDecimalPlaces(folderLocation):
 
 
 def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin = '0', end = '-1', scale = '1', noWarnings = "true"):
-    location = simLoc + '\\' + cfgFileName
-    additional = simLoc + '\\' + addFileName
-    collision = simLoc + '\\' + collFileName
+    location = simLoc + '/' + cfgFileName
+    additional = simLoc + '/' + addFileName
+    collision = simLoc + '/' + collFileName
     if addFileName != None and collFileName != None:
         SUMO_run = subprocess.Popen(["sumo.exe", "-c", location, \
                                      "--additional-files", additional, \
@@ -71,7 +71,7 @@ def setVtype(simLoc, rouFileName, idmParams, idmRatio=1):
     idmID = "idm_vehicle"
     kraussID = "krauss_vehicle"
     # insert variables from X array into vtype parameters of rou.xml file
-    tree = ET.parse(simLoc + '\\' + rouFileName)
+    tree = ET.parse(simLoc + '/' + rouFileName)
     root = tree.getroot()
     # Recreate vType elements for IDM and krauss
     # Create IDM vType elements and set parameter attributes
@@ -90,7 +90,7 @@ def setVtype(simLoc, rouFileName, idmParams, idmRatio=1):
 
     # TODO: add way to set krauss parameters if desired
 
-    tree.write(simLoc + '\\' + rouFileName)
+    tree.write(simLoc + '/' + rouFileName)
 
     # Iterate through all vehicles and set their vType based on idmRatio
     for vehicle in root.iter('vehicle'):
@@ -100,24 +100,24 @@ def setVtype(simLoc, rouFileName, idmParams, idmRatio=1):
         else:
             vehicle.set("type", kraussID)
 
-    tree.write(simLoc + '\\' + rouFileName)
+    tree.write(simLoc + '/' + rouFileName)
     return
 
 def setSampleFreq(simLoc, addFileName, freq):
-    tree = ET.parse(simLoc + '\\' + addFileName)
+    tree = ET.parse(simLoc + '/' + addFileName)
     root = tree.getroot()
     for vType in root.iter('edgeData'):
         vType.set('freq', freq)
-    tree.write(simLoc + '\\' + addFileName)
+    tree.write(simLoc + '/' + addFileName)
 
 # Function to delete empty roads
 def delEmptyRoads(data, simLoc, netFileName):
-    tree = ET.parse(simLoc + '\\' + netFileName)
+    tree = ET.parse(simLoc + '/' + netFileName)
     root = tree.getroot()
     for edge in root.iter('edge'):
         if edge.attrib["id"] in data.emptyRoads:
             root.remove(edge)
-    tree.write(simLoc + '\\' + "newNetFile.net.xml")
+    tree.write(simLoc + '/' + "newNetFile.net.xml")
     tree = None
     return
 
@@ -168,7 +168,7 @@ class outputData():
     def countCollision(self):
         count = 0
         if self.collFileName != None:
-            tree = ET.parse(self.simLoc + '\\' + self.collFileName)
+            tree = ET.parse(self.simLoc + '/' + self.collFileName)
             root = tree.getroot()
             if root.find("collision")!=None:
                 for collision in root.iter("collision"):
@@ -185,7 +185,7 @@ class outputData():
         return x
 
     def sampleTime(self, simLoc, outFileName):
-        tree = ET.parse(simLoc + '\\' + outFileName)
+        tree = ET.parse(simLoc + '/' + outFileName)
         root = tree.getroot()
         for edgeData in root.iter('interval'):
             sampleTime = edgeData.attrib['end']

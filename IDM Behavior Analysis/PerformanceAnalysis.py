@@ -125,7 +125,7 @@ def checkDir(dir):
 
 def plot(dir, units, x, y, xLabel, yLabel, label, xMax, yMax, title):
     checkDir(dir)
-    fileLoc = dir + "\\" + title + ".png"
+    fileLoc = dir + "/" + title + ".png"
     plt.plot(x, y, label=label)
     plt.title(title)
     plt.xlabel(xLabel)
@@ -138,7 +138,7 @@ def plot(dir, units, x, y, xLabel, yLabel, label, xMax, yMax, title):
 
 def add(dir, plt, x, y, label, yLabel, xMax, yMax, title, marker = False):
     checkDir(dir)
-    fileLoc = dir + "\\" + title + ".png"
+    fileLoc = dir + "/" + title + ".png"
     if marker == True:
         plt.plot(x, y, label=label, marker="o")
     else:

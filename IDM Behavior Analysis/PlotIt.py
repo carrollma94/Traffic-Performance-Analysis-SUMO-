@@ -29,7 +29,7 @@ class createPlots():
                       "delta": "(accel sensitivity)", "stepping": "(s)", "collisions": ""}
 
         self.clearOutFolder()
-        self.checkDir(self.location + "\\" + self.outFolderName)
+        self.checkDir(self.location + "/" + self.outFolderName)
 
         # Plot single and combined sensitivity analysis. Save plots in outFolderName
 
@@ -55,7 +55,7 @@ class createPlots():
             for outputParam in self.data[paramType]:
                 if outputParam != "input":
                     df[outputParam] = self.data[paramType][outputParam]["mean"]
-            df.to_csv(self.location + "\\" + self.outFolderName + "\\" + paramType + ".csv", index=False)
+            df.to_csv(self.location + "/" + self.outFolderName + "/" + paramType + ".csv", index=False)
         return
 
     def get_yMax(self):
@@ -98,7 +98,7 @@ class createPlots():
         return self.normalized
 
     def clearOutFolder(self):
-        folder = self.location + "\\" + self.outFolderName
+        folder = self.location + "/" + self.outFolderName
         if os.path.exists(folder):
             shutil.rmtree(folder)
         return
@@ -182,9 +182,9 @@ class createPlots():
         return
 
     def plot(self, x, y, xLabel, yLabel, label, xMax, yMax, title, addXLabel = True):
-        dir = self.location + "\\" + self.outFolderName + "\\" + yLabel
+        dir = self.location + "/" + self.outFolderName + "/" + yLabel
         self.checkDir(dir)
-        fileLoc = dir + "\\" + title + ".png"
+        fileLoc = dir + "/" + title + ".png"
         plt.plot(x, y, label=label)
         plt.title(title)
         if addXLabel == True:
@@ -199,9 +199,9 @@ class createPlots():
         return plt
 
     def add(self, plt, x, y, label, yLabel, xMax, yMax, title, marker = False):
-        dir = self.location + "\\" + self.outFolderName + "\\" + yLabel
+        dir = self.location + "/" + self.outFolderName + "/" + yLabel
         self.checkDir(dir)
-        fileLoc = dir + "\\" + title + ".png"
+        fileLoc = dir + "/" + title + ".png"
         if marker == True:
             plt.plot(x, y, label=label, marker="o")
         else:
@@ -214,10 +214,10 @@ class createPlots():
 
     def Plot3D(self):
         for param in self.data:
-            dir = self.location + "\\" + self.outFolderName + "\\3D Plots"
+            dir = self.location + "/" + self.outFolderName + "/3D Plots"
             self.checkDir(dir)
             title = "3D Plot Correlation ("  + param + "-Flow-Density)"
-            fileLoc = dir + "\\" + title + ".png"
+            fileLoc = dir + "/" + title + ".png"
             fig = plt.figure()
             ax = plt.axes(projection='3d')
             x = np.array(self.data[param]["density"]["mean"])
@@ -309,7 +309,7 @@ def checkDir(dir):
 
 def plot(x, y, myDir, xLabel, yLabel, title, xMax, yMax, label=None):
     checkDir(myDir)
-    fileLoc = myDir + "\\" + title + ".png"
+    fileLoc = myDir + "/" + title + ".png"
     if label != None:
         plt.plot(x, y, 'o', label=label, markersize=1)
         plt.legend()
@@ -325,7 +325,7 @@ def plot(x, y, myDir, xLabel, yLabel, title, xMax, yMax, label=None):
 
 def logFit(plt, x, y, myDir, title, xMax, yMax):
     checkDir(myDir)
-    fileLoc = myDir + "\\" + title + ".png"
+    fileLoc = myDir + "/" + title + ".png"
     plt.xlim([0, xMax])
     plt.ylim([0, yMax])
     delete = []
@@ -351,7 +351,7 @@ def logFit(plt, x, y, myDir, title, xMax, yMax):
 
 def add(plt, x, y, dir, label, title):
     checkDir(dir)
-    fileLoc = dir + "\\" + title + ".png"
+    fileLoc = dir + "/" + title + ".png"
     plt.plot(x, y, 'o', label=label, markersize=1)
     plt.legend()
     plt.savefig(fileLoc, dpi = 500, bbox_inches='tight', transparent = "true")

@@ -16,7 +16,7 @@ class SensAnalys():
     def __init__(self, paramLimits, defParams = None, \
                outParamList = ["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered", "flow", "collisions"], \
                outFolderName="output", \
-               simLoc='C:\\Users\\Matt\\SUMO\\Gville Test1', \
+               simLoc='C:/Users/Matt/SUMO/Gville Test1', \
                cfgFileName="osm.sumocfg", \
                rouFileName="routes.rou.xml", \
                outFileName="main.output.xml", \
@@ -53,7 +53,7 @@ class SensAnalys():
         self.idmRatio = idmRatio
         self.paramLimits = paramLimits
         self.outParamList = outParamList
-        self.outFolderName = "SensitivityAnalysis\\" + outFolderName
+        self.outFolderName = "SensitivityAnalysis/" + outFolderName
         self.simLoc = simLoc
         self.cfgFileName = cfgFileName
         self.rouFileName = rouFileName

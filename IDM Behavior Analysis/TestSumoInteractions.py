@@ -166,7 +166,7 @@ def test():
         density[penRate] = outData.paramList["density"]
         flow[penRate] = outData.paramList["flow"]
 
-    myDir = simLoc + "\\IDM Behavioral Analysis\\Distributions\\NetworkPenetration_1.0_curve_to_fit"
+    myDir = simLoc + "/IDM Behavioral Analysis/Distributions/NetworkPenetration_1.0_curve_to_fit"
 
     PenetrationRatesPlot(density, flow, myDir, cutoff=1)
     '''
@@ -177,7 +177,7 @@ def test():
     scales = ["1.0"]
     for ratio in ratios:
         for scale in scales:
-            outputFolderName = "Penetration Rate Analysis\\ratio" + str(ratio) + "\\scale_" + scale
+            outputFolderName = "Penetration Rate Analysis/ratio" + str(ratio) + "/scale_" + scale
             analysis = SensAnalys(paramLimits, defParams=defParams, \
                  outParamList =["density", "sampledSeconds", "waitingTime", "occupancy", "timeLoss", "speed", "entered", "flow", "collisions"], \
                  outFolderName=outputFolderName, \
