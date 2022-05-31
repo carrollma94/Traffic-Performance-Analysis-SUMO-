@@ -5,6 +5,7 @@ import pandas as pd
 import subprocess
 import random
 import sumolib
+import platform
 import os
 
 def AddIterations(myCSV):
@@ -36,8 +37,12 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
     location = simLoc + '/' + cfgFileName
     additional = simLoc + '/' + addFileName
     collision = simLoc + '/' + collFileName
+    if platform.system() is "Windows":
+        sumo = "sumo.exe"
+    else:
+        sumo = "sumo"
     if addFileName != None and collFileName != None:
-        SUMO_run = subprocess.Popen(["sumo.exe", "-c", location, \
+        SUMO_run = subprocess.Popen([sumo, "-c", location, \
                                      "--additional-files", additional, \
                                      "--collision-output", collision, \
                                      "--begin", begin, \
@@ -47,7 +52,7 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
                                      "--step-length", "1"], \
                                      stdout=subprocess.PIPE)
     elif collFileName == None:
-        SUMO_run = subprocess.Popen(["sumo.exe", "-c", location, \
+        SUMO_run = subprocess.Popen([sumo, "-c", location, \
                                      "--additional-files", additional, \
                                      "--scale", scale, \
                                      "--begin", begin, \
@@ -56,7 +61,7 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
                                      "--step-length", "1"], \
                                      stdout=subprocess.PIPE)
     elif addFileName == None:
-        SUMO_run = subprocess.Popen(["sumo.exe", "-c", location, \
+        SUMO_run = subprocess.Popen([sumo, "-c", location, \
                                      "--collision-output", collision, \
                                      "--scale", scale, \
                                      "--begin", begin, \
