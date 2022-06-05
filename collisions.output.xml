@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022-05-31 13:04:19 by Eclipse SUMO sumo Version 1.10.0
+<!-- generated on 2022-06-05 13:50:34 by Eclipse SUMO sumo Version 1.13.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
-        <net-file value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-/osm.net.xml"/>
-        <route-files value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-/osm_pt.rou.xml,C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-/routes.rou.xml"/>
-        <additional-files value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-/additional.xml"/>
+        <net-file value="/home/matthew/Documents/Traffic-Performance-Analysis-SUMO-/osm.net.xml"/>
+        <route-files value="/home/matthew/Documents/Traffic-Performance-Analysis-SUMO-/osm_pt.rou.xml,/home/matthew/Documents/Traffic-Performance-Analysis-SUMO-/routes.rou.xml"/>
+        <additional-files value="/home/matthew/Documents/Traffic-Performance-Analysis-SUMO-/additional.xml"/>
     </input>
 
     <output>
-        <collision-output value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-/collisions.output.xml"/>
+        <collision-output value="/home/matthew/Documents/Traffic-Performance-Analysis-SUMO-/collisions.output.xml"/>
     </output>
 
     <time>
@@ -39,7 +39,7 @@
     </report>
 
     <gui_only>
-        <gui-settings-file value="C:\Users\Matt\OneDrive%20-%20East%20Carolina%20University\Documents\GitHub\Traffic-Performance-Analysis-SUMO-/osm.view.xml"/>
+        <gui-settings-file value="/home/matthew/Documents/Traffic-Performance-Analysis-SUMO-/osm.view.xml"/>
         <start value="false"/>
         <tracker-interval value="1"/>
     </gui_only>
