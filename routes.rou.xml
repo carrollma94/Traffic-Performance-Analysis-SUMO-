@@ -1,6 +1,6 @@
 <routes>
-    <vType id="idm_vehicle" vClass="passenger" carFollowModel="IDM" minGap="4.11" accel="4.86" decel="6.9" emergencyDecel="9.0" tau="1.67" delta="7.04" />
-    <vType id="krauss_vehicle" vClass="passenger" carFollowModel="EIDM" />
+    <vType id="autonomous_vehicle" vClass="passenger" carFollowModel="EIDM" minGap="4.11" accel="4.86" decel="6.9" emergencyDecel="9.0" tau="1.67" delta="7.04" />
+    <vType id="human_driver" vClass="passenger" carFollowModel="EIDM" />
     <vehicle id="veh0" type="krauss_vehicle" depart="0.00" departLane="best">
         <route edges="16728645#5 -16724850#3 -16724850#2 -16724850#1 -16724850#0 904622813#0 904622813#1 904622813#2 16723820 906939360 911248048 253132779 218132216 906939359 361221996 -575389179 16729391 -575389180#3 -575389180#2 -575389180#1 253130291#1 253130291#2 253130291#6 -16721699#4 -16721885#2 -16721885#1" />
     </vehicle>
