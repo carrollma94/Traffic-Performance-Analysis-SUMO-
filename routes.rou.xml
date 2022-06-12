@@ -1,7 +1,7 @@
 <routes>
 <<<<<<< HEAD
-    <vType id="idm_vehicle" vClass="passenger" carFollowModel="IDM" minGap="4.39" accel="5.13" decel="8.16" emergencyDecel="9.0" tau="0.93" delta="7.29" />
-    <vType id="krauss_vehicle" vClass="passenger" carFollowModel="EIDM" />
+    <vType id="autonomous_vehicle" vClass="passenger" carFollowModel="EIDM" minGap="4.39" accel="5.13" decel="8.16" emergencyDecel="9.0" tau="0.93" delta="7.29" />
+    <vType id="human_driver" vClass="passenger" carFollowModel="EIDM" />
     <vehicle id="veh0" type="idm_vehicle" depart="0.00" departLane="best">
 =======
     <vType id="autonomous_vehicle" vClass="passenger" carFollowModel="EIDM" minGap="4.11" accel="4.86" decel="6.9" emergencyDecel="9.0" tau="1.67" delta="7.04" />

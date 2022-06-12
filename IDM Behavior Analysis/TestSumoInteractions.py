@@ -262,7 +262,7 @@ def test():
     idm_behavior_analysis(idm_params, "Combined GA Solution IDM Behavior", [0, 100])
     '''
 
-    '''
+
     # Example of how to run GA for combined model
     
     # Generate Stat Data from data set (ours was from a previously ran GA for combined fitness function)
@@ -274,17 +274,16 @@ def test():
     
     # Run GA
     for idmRatio in [0.25,0.5,0.75,1.0]:
-        csvFileName = 'GA-EIDM-' + str(idmRatio) + '.csv'
+        fileName = 'GA-EIDM2-' + str(idmRatio)
+        csvFileName = fileName + '.csv'
         optomizeAllParameters(perfMeasure=params, simLoc=simLoc, csvFileName=csvFileName, \
                               rouFileName=rouFileName, cfgFileName=cfgFileName, \
                               paramLimits=paramLimits, defParams=defParams, \
                               idmRatio=idmRatio, collFileName=collFileName, addFileName=addFileName, \
                               begin='0', end='-1', scale='1', noWarnings="true", \
                               stat_data = stat_data)
-    '''
-    fileName = 'GA-EIDM-0.25'
-    # Plot the GA elites from CSV file that was created
-    plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName=fileName, perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
+        # Plot the GA elites from CSV file that was created
+        plotFromCSV(path=simLoc + '/IDM Behavior Analysis/GeneticAlgorithm', fileName=fileName, perfParam = 'combined', increase=False, removeCollisions=True, plot=True)
 
 
     return
