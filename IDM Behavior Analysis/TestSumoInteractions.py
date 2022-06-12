@@ -16,7 +16,6 @@ def test():
     # File name of sumo configuration file
     cfgFileName = "osm.sumocfg"
     # File name of route file
-    rouFileName = "routes.rou.xml"
     # Output file name
     outFileName = "main.output.xml"
     # Additional file name
