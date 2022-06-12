@@ -73,18 +73,19 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
     return
 
 def setVtype(simLoc, rouFileName, idmParams, idmRatio=1):
-    idmID = "idm_vehicle"
-    kraussID = "krauss_vehicle"
+    idmID = "autonomous_vehicle"
+    kraussID = "human_driver"
+    carFollowModel = 'EIDM'
     # insert variables from X array into vtype parameters of rou.xml file
     tree = ET.parse(simLoc + '/' + rouFileName)
     root = tree.getroot()
     # Recreate vType elements for IDM and krauss
     # Create IDM vType elements and set parameter attributes
     for vType in root.iter("vType"):
-        if vType.attrib["id"] == "idm_vehicle":
+        if vType.attrib["id"] == idmID:
             vType.set("id", idmID)
             vType.set("vClass", "passenger")
-            vType.set('carFollowModel', 'IDM')
+            vType.set('carFollowModel', carFollowModel)
             vType.set('minGap', str(idmParams[0]))
             vType.set('accel', str(idmParams[1]))
             vType.set('decel', str(idmParams[2]))
