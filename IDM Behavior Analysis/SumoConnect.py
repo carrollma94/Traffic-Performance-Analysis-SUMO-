@@ -73,12 +73,12 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
     return
 
 def setVtype(simLoc, rouFileName, idmParams, idmRatio=1):
-    print(simLoc + '\\' + rouFileName)
+    print(simLoc + '/' + rouFileName)
     idmID = "autonomous_vehicle"
     kraussID = "human_driver"
     carFollowModel = 'EIDM'
     # insert variables from X array into vtype parameters of rou.xml file
-    tree = ET.parse(simLoc + '\\' + rouFileName)
+    tree = ET.parse(simLoc + '/' + rouFileName)
     root = tree.getroot()
     # Recreate vType elements for IDM and krauss
     # Create IDM vType elements and set parameter attributes
