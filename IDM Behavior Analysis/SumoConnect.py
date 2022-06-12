@@ -73,6 +73,7 @@ def runSUMO(simLoc, cfgFileName, collFileName = None, addFileName = None, begin 
     return
 
 def setVtype(simLoc, rouFileName, idmParams, idmRatio=1):
+    print(simLoc + '/' + rouFileName)
     idmID = "autonomous_vehicle"
     kraussID = "human_driver"
     carFollowModel = 'EIDM'
