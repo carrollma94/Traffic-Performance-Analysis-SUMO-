@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2022-06-26 13:57:00 by Eclipse SUMO sumo Version 1.13.0
+<!-- generated on 2022-06-27 00:07:49 by Eclipse SUMO sumo Version 1.13.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -45,3 +45,18 @@
     </gui_only>
 
 </configuration>
+-->
+
+<collisions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/collision_file.xsd">
+    <collision time="565.00" type="collision" lane="-575389180#2_0" pos="25.16" collider="veh233" victim="veh226" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="11.55" victimSpeed="4.78"/>
+    <collision time="1418.00" type="collision" lane="-575389180#1_0" pos="6.50" collider="veh723" victim="veh649" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="4.76" victimSpeed="0.00"/>
+    <collision time="1435.00" type="collision" lane="-575389180#3_0" pos="25.29" collider="veh775" victim="veh805" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="2.89" victimSpeed="0.20"/>
+    <collision time="1622.00" type="collision" lane="-575389180#3_0" pos="27.65" collider="veh943" victim="veh929" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="4.75" victimSpeed="0.00"/>
+    <collision time="1652.00" type="collision" lane="-16729624#8_0" pos="54.16" collider="veh912" victim="veh865" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="3.02" victimSpeed="0.80"/>
+    <collision time="1894.00" type="collision" lane="-575389180#3_0" pos="47.04" collider="veh1075" victim="veh1073" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="5.13" victimSpeed="0.00"/>
+    <collision time="1959.00" type="collision" lane="-575389180#3_0" pos="18.37" collider="veh1196" victim="veh1093" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="5.30" victimSpeed="0.00"/>
+    <collision time="2868.00" type="collision" lane="-575389180#3_0" pos="21.86" collider="veh1546" victim="veh1632" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="1.06" victimSpeed="0.61"/>
+    <collision time="3256.00" type="collision" lane="575389179_0" pos="20.98" collider="veh1950" victim="veh1957" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="4.72" victimSpeed="1.52"/>
+    <collision time="3642.00" type="collision" lane="51724100#2_0" pos="67.58" collider="veh2221" victim="veh2164" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="4.01" victimSpeed="1.92"/>
+    <collision time="4302.00" type="collision" lane="-575389180#1_0" pos="5.36" collider="veh2198" victim="veh2121" colliderType="autonomous_vehicle" victimType="autonomous_vehicle" colliderSpeed="3.99" victimSpeed="0.00"/>
+</collisions>

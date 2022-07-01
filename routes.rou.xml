@@ -1,5 +1,5 @@
 <routes>
-    <vType id="autonomous_vehicle" vClass="passenger" carFollowModel="EIDM" minGap="3.54" accel="1.45" decel="3.23" emergencyDecel="9.0" tau="0.72" delta="3.75" />
+    <vType id="autonomous_vehicle" vClass="passenger" carFollowModel="EIDM" minGap="4.48" accel="3.62" decel="8.4" emergencyDecel="9.0" tau="0.72" delta="3.26" />
     <vType id="human_driver" vClass="passenger" carFollowModel="EIDM" />
     <vehicle id="veh0" type="autonomous_vehicle" depart="0.00" departLane="best">
         <route edges="16728645#5 -16724850#3 -16724850#2 -16724850#1 -16724850#0 904622813#0 904622813#1 904622813#2 16723820 906939360 911248048 253132779 218132216 906939359 361221996 -575389179 16729391 -575389180#3 -575389180#2 -575389180#1 253130291#1 253130291#2 253130291#6 -16721699#4 -16721885#2 -16721885#1" />
