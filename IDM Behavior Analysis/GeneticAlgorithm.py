@@ -58,7 +58,7 @@ def optomizeAllParameters(perfMeasure, csvFileName, simLoc, rouFileName, cfgFile
     # Calculate fitness function
     def fitnessFuncDec(performance, collisions):
         if collisions == 0:
-            fitness = performance[perf]
+            fitness = performance
         elif collisions > 0:
             fitness = 1
         return fitness
@@ -66,7 +66,7 @@ def optomizeAllParameters(perfMeasure, csvFileName, simLoc, rouFileName, cfgFile
     # Calculate fitness function
     def fitnessFuncInc(performance, collisions):
         if collisions == 0:
-            fitness = 1/performance[perf]
+            fitness = 1/performance
         elif collisions > 0:
             fitness = 1
         return fitness
